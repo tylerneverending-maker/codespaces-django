@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Development Services | blueTrestle Project</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="{% static 'Octocat.png' %}" class="navbar-logo" alt="logo" />
+            <span class="navbar-title">blueTrestle Project</span>
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/development-services/">Development Services</a></li>
+                <li><a href="/featured-products/">Featured Products</a></li>
+                <li><a href="/profile/">Profile</a></li>
+                <li><a href="/accounts/login/">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h1>Development Services</h1>
+        <p>blueTrestle offers a range of development services to help you build, launch, and scale your projects efficiently.</p>
+        <ul class="features-grid">
+            <li class="feature-card">
+                <h2>Custom Web Applications</h2>
+                <p>Full-stack Django solutions tailored to your business needs.</p>
+            </li>
+            <li class="feature-card">
+                <h2>API Development</h2>
+                <p>Robust RESTful and GraphQL APIs for seamless integrations.</p>
+            </li>
+            <li class="feature-card">
+                <h2>Cloud Deployment</h2>
+                <p>Deploy and manage your apps on AWS, Azure, or GCP with best practices.</p>
+            </li>
+            <li class="feature-card">
+                <h2>Consulting & Training</h2>
+                <p>Expert guidance, code reviews, and team upskilling for Django projects.</p>
+            </li>
+        </ul>
+        <footer class="footer">
+            <p><a href="/">Back to Home</a></p>
+        </footer>
+    </div>
+</body>
+</html>

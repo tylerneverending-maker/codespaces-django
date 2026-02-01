@@ -1,0 +1,50 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Featured Products | blueTrestle Project</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="{% static 'Octocat.png' %}" class="navbar-logo" alt="logo" />
+            <span class="navbar-title">blueTrestle Project</span>
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/development-services/">Development Services</a></li>
+                <li><a href="/featured-products/">Featured Products</a></li>
+                <li><a href="/profile/">Profile</a></li>
+                <li><a href="/accounts/login/">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content">
+        <img src="{% static 'products-clipart.svg' %}" alt="Products" style="display:block;margin:2rem auto 1rem auto;max-width:160px;width:60%;" />
+        <h1>Featured Products</h1>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h2>blueTrestle Analytics</h2>
+                <p>Advanced analytics platform for actionable business insights.</p>
+            </div>
+            <div class="feature-card">
+                <h2>blueTrestle CRM</h2>
+                <p>Customer relationship management made simple and scalable.</p>
+            </div>
+            <div class="feature-card">
+                <h2>blueTrestle Portal</h2>
+                <p>Unified portal for team collaboration and project management.</p>
+            </div>
+            <div class="feature-card">
+                <h2>blueTrestle Integrator</h2>
+                <p>Seamless integration with third-party services and APIs.</p>
+            </div>
+        </div>
+        <footer class="footer">
+            <p><a href="/">Back to Home</a></p>
+        </footer>
+    </div>
+</body>
+</html>

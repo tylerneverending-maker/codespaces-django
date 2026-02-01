@@ -21,11 +21,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from hello_world.core import views as core_views
+from hello_world.core.profile_view import profile
 
 urlpatterns = [
     path("", core_views.index),
+    path("development-services/", core_views.development_services, name="development_services"),
+    path("featured-products/", core_views.featured_products, name="featured_products"),
+    path("profile/", profile, name="profile"),
+    path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
-    path("__reload__/", include("django_browser_reload.urls")),
+    path("__reload__", include("django_browser_reload.urls")),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

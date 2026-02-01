@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Profile | blueTrestle Project</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="{% static 'Octocat.png' %}" class="navbar-logo" alt="logo" />
+            <span class="navbar-title">blueTrestle Project</span>
+            <ul class="navbar-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/development-services/">Development Services</a></li>
+                <li><a href="/featured-products/">Featured Products</a></li>
+                <li><a href="/profile/">Profile</a></li>
+                <li><a href="/accounts/login/">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-content">
+        <h1>User Profile</h1>
+        <p><strong>Username:</strong> {{ profile.user.username }}</p>
+        <p><strong>Current Membership:</strong> {{ profile.get_membership_display }}</p>
+        {% if message %}
+            <p style="color: #00adb5; font-weight: bold;">{{ message }}</p>
+        {% endif %}
+        <form method="post" style="margin-bottom:1.5rem;">
+            {% csrf_token %}
+            <label for="membership">Change Membership:</label>
+            <select name="membership" id="membership">
+                {% for value, label in profile.MEMBERSHIP_CHOICES %}
+                    <option value="{{ value }}" {% if profile.membership == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Update</button>
+        </form>
+        <form method="post" style="display:inline;">
+            {% csrf_token %}
+            {% if profile.membership != 'premium' %}
+                <button type="submit" name="join">Join Premium</button>
+            {% else %}
+                <button type="submit" name="leave">Leave Premium</button>
+            {% endif %}
+        </form>
+        <footer class="footer">
+            <p><a href="/">Back to Home</a></p>
+        </footer>
+    </div>
+</body>
+</html>
