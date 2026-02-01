@@ -16,18 +16,50 @@
     <link rel="stylesheet" href="{% static 'main.css' %}">
 </head>
 
+
 <body>
-    <div class="App">
-        <header class="App-header">
-            <img src="{% static 'Octocat.png' %}" class="App-logo" alt="logo" />
+    <nav class="navbar">
+        <div class="navbar-container">
+            <img src="{% static 'Octocat.png' %}" class="navbar-logo" alt="logo" />
+            <span class="navbar-title">blueTrestle Project</span>
+            <ul class="navbar-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main class="main-content">
+        <section id="home" class="section hero-section">
+            <h1>Welcome to the blueTrestle Project!</h1>
             <p>
-                GitHub Codespaces blueTrestle<span class="heart">♥️</span> Django
+                This is the official landing page for the <strong>blueTrestle Project</strong> running on Django in GitHub Codespaces <span class="heart">♥️</span>
             </p>
-            <p class="small">
-                Edit <code>hello_world/templates/index.html</code> and see changes live!
+        </section>
+        <section id="about" class="section">
+            <h2>About</h2>
+            <p>
+                The blueTrestle Project is designed for rapid prototyping and collaborative development using Django and GitHub Codespaces.
             </p>
-        </header>
-    </div>
+        </section>
+        <section id="features" class="section">
+            <h2>Features</h2>
+            <ul>
+                <li>Live reload and instant feedback</li>
+                <li>Modern Django setup</li>
+                <li>Easy customization and extension</li>
+                <li>Ready for team collaboration</li>
+            </ul>
+        </section>
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>
+                To update this page, edit <code>hello_world/templates/index.html</code>.<br>
+                For backend logic, see <code>hello_world/core/views.py</code>.
+            </p>
+        </section>
+    </main>
 </body>
 
 </html>
